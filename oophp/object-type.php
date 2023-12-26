@@ -22,22 +22,31 @@ class produk {
         return "$this->penulis, $this->penerbit";
     }
 }
+ // object-type menggunakan sebuah object sebagai tipe data dari sebuah class  
+class CetakInfoProduk {
+    public function cetak( Produk $produk) {
+        $str = "{$produk->judul} | {$produk->getLabel()} (Rp. {$produk->harga})";
+        return $str;
+    }
+}
 
 // $produk1 = new Produk();
 // // mengubah property 
 // $produk1->judul = "naruto";
 // // var_dump($produk1);
 
-$produk1 = new produk ("naruto", "ilham", "HTI", "1jt");
-$produk2 = new produk("mobile legend", "udin", "moonton", 400);
-$produk3 = new produk("mobile legend");
+$produk1 = new produk ("naruto", "Mashasi Kisimoto", "Shounen", "1jt");
+$produk2 = new produk("mobile legend", "Cina", "moonton", 400);
+
 
 
 echo "komik : " . $produk1->getLabel();
 echo "<br>";
 echo "game : " . $produk2->getLabel();
 echo "<br>";
-var_dump($produk3);
+
+$infoProduk1 = new CetakInfoProduk();
+echo $infoProduk1->cetak($produk2);
 
 
 ?>
