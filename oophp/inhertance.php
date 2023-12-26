@@ -6,6 +6,10 @@
 // - memperluas (extends) fungsionalitas dari parentnya
 
 // inheritance problem \/
+// kita menambahkan jmlh halaman dan wktmain
+// setiap game ada wkt main tetapi tidak ada jmlh halaman
+// setiap komik ada jumlah halaman tetapi tidak ada waktu main
+
 class produk {
     public $judul,
         $penulis,
@@ -85,7 +89,5 @@ $produk2 = new game("mobile legend", "Cina", "moonton", 400, 0, 30,);
 echo $produk1->getinfoProduk();
 echo "<br>";
 echo $produk2->getinfoProduk();
-
-
 
 ?>
